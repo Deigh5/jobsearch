@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Job Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="id">
+  <p style="font-size: 20px">{{newDesc.company}}</p>
+  <ion-img [src]="newDesc.company_logo" style="height:300px; width:300px"></ion-img>
+  Position: {{newDesc.title}}<br>
+  Date Posted: {{newDesc.created_at}}<br>
+  Job Type: {{newDesc.type}}<br>
+  Description: <p [innerHTML] = "newDesc.description"></p>
+  How To Appy: <p [innerHTML] = "newDesc.how_to_apply"></p>
+</ion-content>

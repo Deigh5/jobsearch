@@ -1,14 +1,27 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Deigh Placement
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-card text-center *ngFor="let job of name">
+    <ion-item>
+      <ion-img [src]="job.name.company_logo" style="height: 50px; width:50px"></ion-img>
+      <div style="padding-left: 50px">
+        {{job.name.company}}
+        <p style="font-size: 10px; color: grey; padding-block-start: 0px">
+          {{job.name.created_at}}
+      </p>
+      </div>
+    </ion-item>
+
+    <ion-item [routerLink]="['/routePath']" routerLinkActive="router-link-active" >
+      <ion-icon name="pin"></ion-icon><br>{{job.name.location}}<br><br>
+      Position: {{job.name.title}}
+    </ion-item>
+    <ion-button style="padding-left: 250px" [routerLink]="['/description', job.name.id]" routerLinkActive="router-link-active" >View</ion-button>
+  </ion-card>
 </ion-content>

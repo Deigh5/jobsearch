@@ -1,5 +1,7 @@
 {
   "name": "jobSearch",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
